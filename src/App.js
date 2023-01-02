@@ -1,25 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Layout from "./components/ui/Layout";
+import {Route, Routes} from "react-router-dom";
+import MainPage from "./pages/MainPage";
+import RecipesPage from "./pages/RecipesPage";
+import ShoppingListPage from "./pages/ShoppingListPage";
+import RecipeFullPage from "./pages/RecipeFullPage";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <div>
+    <Layout>
+      <Routes>
+        <Route path='/shoppingList' element={<ShoppingListPage/>}/>
+        <Route exact path='/recipes' element={<RecipesPage/>}/>
+        <Route path='/' element={<MainPage/>} exact/>
+        <Route path='/recipes/:id' element={<RecipeFullPage/>} exact/>
+      </Routes>
+    </Layout>
+  </div>
 }
 
 export default App;

@@ -1,0 +1,10 @@
+.recipe-content {
+    padding: 3rem 0;
+    display: grid;
+    gap: 2rem 5rem;
+}
+@media screen and (min-width: 992px) {
+    .recipe-content {
+        grid-template-columns: 1fr 2fr;
+    }
+}

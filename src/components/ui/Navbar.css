@@ -1,0 +1,33 @@
+.navbar {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #24252A;
+}
+
+li {
+    font-family: "Calibri", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav-links li a {
+    transition: all 0.3s ease 0s;
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.nav-links li a:hover {
+    color: #50b2d0
+}
