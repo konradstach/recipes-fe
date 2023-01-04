@@ -4,9 +4,11 @@ import Ingredients from "../components/recipe/Ingredients";
 import NutritionTable from "../components/recipe/NutritionTable";
 import {useParams} from "react-router-dom";
 import './RecipeFullPage.css'
+import RecipeHeader from "../components/recipe/RecipeHeader";
 
 const RecipeFullPage = () => {
     const RECIPE = {
+        mealName: "Szakszuka",
         steps: [
             "Przygotować pomidory: sparzyć, obrać ze skórki, pokroić na ćwiartki, wykroić szypułki, miąższ pokroić w kosteczkę.",
             "Na niedużą patelnię (około 20 cm średnicy) włożyć masło lub wlać oliwę oraz starty czosnek, chwilę podsmażyć.",
@@ -23,15 +25,17 @@ const RecipeFullPage = () => {
             {ingredientName: "świeża bazylia"},
             {ingredientName: "bagietka czosnkowa"},
         ],
-        favourite: true
+        favourite: true,
+        imgUrl:"https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2018/12/Shakshuka-19.jpg"
     }
 
-    const recipeId = useParams();
+    const recipeId = useParams(); //TODO
 
     const [recipe, setRecipe] = useState();
 
     return (
         <div>
+            <RecipeHeader mealName={RECIPE.mealName} imgUrl={RECIPE.imgUrl} tags={RECIPE.tags} favourite={RECIPE.favourite}/>
             <section className="recipe-content">
                 <Ingredients ingredients={RECIPE.ingredients}/>
                 <Instructions instructions={RECIPE.steps}/>

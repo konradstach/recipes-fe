@@ -76,7 +76,6 @@
     }
     .tags-container {
         order: 0;
-        /* background: blue; */
     }
     .tags-list {
         display: grid;
