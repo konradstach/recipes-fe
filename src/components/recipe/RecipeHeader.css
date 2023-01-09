@@ -4,8 +4,9 @@
     padding: 1rem;
 }
 .recipe-hero-img {
-    height: 300px;
-    border-radius: var(--borderRadius);
+    max-width: 100%;
+    width: auto;
+    height: auto;    border-radius: var(--borderRadius);
 }
 .recipe-info p {
     color: var(--grey-600);

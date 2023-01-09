@@ -19,16 +19,17 @@ const RecipesPage = () => {
 
     return (<>
         <div className="recipes-nav">
-            <SearchBar recipes = {recipes} setSearchResults={setSearchResults}></SearchBar>
+            <SearchBar recipes={recipes} setSearchResults={setSearchResults}></SearchBar>
         </div>
         <div className="recipes-list">
             {searchResults.map(r => {
                 return <RecipeCard name={r.name}
                                    id={r.id}
-                                   key = {r.id}
+                                   key={r.id}
                                    prepTime={r.prepTime}
                                    withCookTime={r.withCookTime}
-                                   imgUrl={r.imgUrl}/>
+                                   imgUrl={r.imgUrl}
+                                   favourite={r.favourite}/>
             })}
         </div>
     </>);

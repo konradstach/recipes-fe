@@ -1,6 +1,7 @@
 import React from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
+import './SearchBar.css';
 
 const SearchBar = (props) => {
 
@@ -20,10 +21,11 @@ const SearchBar = (props) => {
     }
 
     return (
-        <header>
+        <header className="search-bar-container">
             <form className="search" onSubmit={handleSubmit}>
                 <input className="search-input" type="text" id ="search" onChange={handleSearchChange}/>
             </form>
+            <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon"></FontAwesomeIcon>
         </header>
     );
 };
