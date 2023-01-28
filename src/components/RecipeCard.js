@@ -33,7 +33,7 @@ const RecipeCard = (props) => {
             <FontAwesomeIcon
                 icon={faFireAlt} className="fa-2x icon">
             </FontAwesomeIcon>
-            <p>452 kcal</p>
+            <p>{props.energy} kcal</p>
         </div>
 
         <div className="tile recipe-nutri">

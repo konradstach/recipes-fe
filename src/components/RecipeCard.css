@@ -29,6 +29,7 @@
 }
 
 .recipe-name {
+    text-transform: uppercase;
     margin-bottom: 1rem;
     margin-top: 1rem;
     line-height: 1;
@@ -80,4 +81,23 @@ p {
     padding: 0.5rem;
     color: red;
     background: rgba(0, 0, 0, 0.6);
+}
+
+
+@media screen and (min-width: 400px) {
+    .recipe {
+        grid-template-rows: 2fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .recipe {
+        grid-template-rows: 3fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .recipe {
+        grid-template-rows: 5fr 1fr 1fr;
+    }
 }

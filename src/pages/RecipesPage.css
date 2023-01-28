@@ -15,7 +15,7 @@
     padding-bottom: 3rem;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 400px) {
     .recipes-list {
         grid-template-columns: 1fr 1fr;
     }
