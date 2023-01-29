@@ -6,18 +6,19 @@ import RecipesPage from "./pages/RecipesPage";
 import ShoppingListPage from "./pages/ShoppingListPage";
 import RecipeFullPage from "./pages/RecipeFullPage";
 import {AnimatePresence} from 'framer-motion';
+import AddNewRecipePage from "./pages/AddNewRecipePage";
 
 function App() {
     const location = useLocation();
     return <div>
         <Layout>
             <AnimatePresence>
-
                 <Routes location={location} key={location.pathname}>
                     <Route path='/shoppingList' element={<ShoppingListPage/>}/>
                     <Route exact path='/recipes' element={<RecipesPage/>}/>
                     <Route path='/' element={<MainPage/>} exact/>
                     <Route path='/recipes/:id' element={<RecipeFullPage/>} exact/>
+                    <Route path='/new-recipe' element={<AddNewRecipePage/>} exact/>
                 </Routes>
             </AnimatePresence>
         </Layout>
