@@ -11,7 +11,7 @@ const RecipeCard = (props) => {
             <div className="img-fav-icon-container">
                 {props.favourite ?
                     <FontAwesomeIcon
-                        icon={faHeart} className="fa-2xl img-icon">
+                        icon={faHeart} className="fa-2x img-icon icon">
                     </FontAwesomeIcon> : null}
                 <img
                     src={props.imgUrl}

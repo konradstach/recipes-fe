@@ -11,8 +11,7 @@
 
 .recipes-list {
     display: grid;
-    gap: 2rem 1rem;
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
 }
 
 @media screen and (min-width: 400px) {

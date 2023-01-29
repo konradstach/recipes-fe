@@ -1,9 +1,12 @@
 .recipe {
-    background-color: #e2e0ff;
+    background: linear-gradient(to right, #e2e0ff, #c6c5e0);
     margin: 0.5rem;
     display: grid;
-    border: solid;
-    border-radius: 0.5rem;
+    -webkit-box-shadow: 5px 3px 24px -10px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 5px 3px 24px -10px rgba(66, 68, 90, 1);
+    box-shadow: 5px 3px 24px -10px rgba(66, 68, 90, 1);
+    border: solid rgba(26, 26, 26, 0.45);
+    border-radius: 0.35rem;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 5fr 1fr 1fr;
     grid-template-areas:
@@ -84,10 +87,23 @@ p {
 }
 
 
-@media screen and (min-width: 400px) {
+@media screen and (max-width: 600px) {
     .recipe {
-        grid-template-rows: 2fr 1fr 1fr;
+        grid-template-rows: 3fr 1fr 1fr;
     }
+    .recipe-name {
+        margin-bottom: 0.5rem;
+        margin-top: 0.75rem;
+        font-size: 1rem;
+    }
+    .icon {
+        padding-top: 0.25rem;
+        height: 20px;
+    }
+    .tile{
+        font-size: 0.8rem;
+    }
+
 }
 
 @media screen and (min-width: 600px) {
