@@ -6,6 +6,8 @@ import {useParams} from "react-router-dom";
 import './RecipeFullPage.css'
 import RecipeHeader from "../components/recipe/RecipeHeader";
 import axios from "axios";
+import {motion} from 'framer-motion';
+
 
 const RecipeFullPage = () => {
     const recipeId = useParams().id;
@@ -32,7 +34,12 @@ const RecipeFullPage = () => {
         return <p>Loading...</p>
     } else {
         return (
-            <div>
+            <motion.div
+                initial={{opacity:0}}
+                animate={{opacity:1}}
+                exit={{opacity:0}}
+                transition={{ duration: 0.5 }}
+            >
                 <RecipeHeader mealName={recipe.name} imgUrl={recipe.imgUrl} tags={recipe.tags}
                               favourite={recipe.favourite}
                               toggleFavourite={handleFavouriteClick}/>
@@ -41,7 +48,7 @@ const RecipeFullPage = () => {
                     <Instructions instructions={recipe.steps}/>
                     <NutritionTable/>
                 </section>
-            </div>
+            </motion.div>
         );
     }
 };
