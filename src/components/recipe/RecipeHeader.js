@@ -13,7 +13,7 @@ const RecipeHeader = (props) => {
                 />
                 <article className="recipe-info">
                     <h2>{props.mealName}
-                        <button className="favourite-btn">
+                        <button className="favourite-btn" onClick={props.toggleFavourite}>
                             <FontAwesomeIcon
                                 icon={props.favourite ? solidHeart : regularHeart} className="fa-1x"
                             ></FontAwesomeIcon>
@@ -48,8 +48,8 @@ const RecipeHeader = (props) => {
                     </div>
                     <p className="recipe-tags">
                         Tags :
-                        {props.tags.map(tag => {
-                            return <a href="tag-template.html">{tag}</a> //TODO
+                        {props.tags.map((tag, index) => {
+                            return <a href="tag-template.html" key={index}>{tag}</a> //TODO
                         })}
                     </p>
                 </article>
