@@ -45,41 +45,22 @@ const AddNewRecipePage = () => {
 
     return (<div className="add-new-recipe-container">
         <p>Dodaj nowy przepis</p>
-        <form onSubmit={submitHandler}>
-            <ul>
-                <li>
-                    <label>Meal name</label>
-                    <input type="text" id="name" ref={nameInputRef}/>
-                </li>
-                <li>
-                    <label>Portions</label>
-                    <input type="number" id="portions" ref={portionsInputRef}/>
-                </li>
-                <li>
-                    <label>Preparation time</label>
-                    <input type="number" id="prep_time" ref={prepTimeInputRef}/>
-                </li>
-                <li>
-                    <label>With cooking time</label>
-                    <input type="number" id="with_cook_time" ref={withCookTimeInputRef}/>
-                </li>
-                <li>
-                    <label>Energy</label>
-                    <input type="number" id="energy" ref={energyInputRef}/>
-                </li>
-                <li>
-                    <label>Image URL</label>
-                    <input type="text" id="img_url" ref={imgUrlInputRef}/>
-                </li>
-                <li>
-                    <label>Ingredients</label>
-                    <textarea id="ingredients" ref={ingredientsInputRef}/>
-                </li>
-                <li>
-                    <label>Steps</label>
-                    <textarea id="steps" ref={stepsInputRef}/>
-                </li>
-            </ul>
+        <form className="add-recipe-form" onSubmit={submitHandler}>
+            <input type="text" id="name" placeholder="Nazwa" ref={nameInputRef}/>
+            <input type="number" id="portions" placeholder="Liczba porcji" ref={portionsInputRef}/>
+            <div id="cook-times">
+                <input type="number" id="prep_time" placeholder="Czas przygotowania" ref={prepTimeInputRef}/>
+                <input type="number" id="with_cook_time" placeholder="Z gotowaniem" ref={withCookTimeInputRef}/>
+            </div>
+            <input type="number" id="energy" placeholder="Kcal (na 1 porcje)" ref={energyInputRef}/>
+            <div id="macros-inputs">
+                <input type="number" id="protein-input" placeholder="Białko [g]" ref={energyInputRef}/>
+                <input type="number" id="carbs-input" placeholder="Węglowodany [g]" ref={energyInputRef}/>
+                <input type="number" id="fats-input" placeholder="Tłuszcze [g]" ref={energyInputRef}/>
+            </div>
+            <input type="text" id="img_url" placeholder="URL zdjęcia" ref={imgUrlInputRef}/>
+            <textarea id="ingredients" placeholder="Składniki" ref={ingredientsInputRef}/>
+            <textarea id="steps" placeholder="Przygotowanie" ref={stepsInputRef}/>
             <button type='submit'>Add</button>
         </form>
     </div>);

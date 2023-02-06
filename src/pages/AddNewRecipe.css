@@ -1,6 +1,35 @@
-.add-new-recipe-container{
-color: black;
+.add-new-recipe-container {
+    color: black;
 }
-li{
-    color:black;
+
+.add-recipe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+}
+
+#prep_time, #with_cook_time {
+    width: 50%;
+}
+
+#cook-times {
+    width: 100%;
+    display: flex;
+}
+
+#macros-inputs {
+    width: 100%;
+    display: inline-flex;
+}
+
+#protein-input, #carbs-input, #fats-input {
+    width: 100%;
+}
+
+input, textarea, p {
+    margin: 3px;
+}
+
+textarea {
+    min-height: 150px;
 }
