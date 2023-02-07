@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import './RecipesPage.css'
 import RecipeCard from "../components/RecipeCard";
-import {getRecipes} from "../services/RecipesService";
 import SearchBar from "../components/ui/SearchBar";
 import axios from "axios";
 import {motion} from 'framer-motion';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faPlus} from "@fortawesome/free-solid-svg-icons";
+import {useNavigate} from "react-router-dom";
 
 
 const RecipesPage = () => {
@@ -22,26 +24,31 @@ const RecipesPage = () => {
         })
     }, []);
 
-    // useEffect(() => {
-    //     getRecipes().then(json => {
-    //         setRecipes(json)
-    //         return json
-    //     }).then(json => {
-    //         setSearchResults(json);
-    //     })
-    // }, []);
-
+    let navigate = useNavigate();
+    const goToNewRecipePage = () =>{
+        let path = '/new-recipe';
+        navigate(path);
+    }
 
     if (isLoading) {
         return <p>Loading...</p>
     }
     return (<motion.div
-        initial={{opacity:0}}
-        animate={{opacity:1}}
-        exit={{opacity:0}}
-        transition={{ duration: 0.5 }}
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}
+        transition={{duration: 0.5}}
     >
         <div className="recipes-nav">
+            <button className="add-new-recipe-button" onClick={goToNewRecipePage}>
+                <span className="add-new-recipe-button-text">Dodaj nowy</span>
+                <span className="add-new-recipe-button-icon">
+                <FontAwesomeIcon
+                    icon={faPlus} className="fa-1x add-icon">
+                </FontAwesomeIcon>
+            </span>
+            </button>
+
             <SearchBar recipes={recipes} setSearchResults={setSearchResults}></SearchBar>
         </div>
         <div className="recipes-list">

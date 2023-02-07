@@ -1,13 +1,20 @@
 import React from 'react';
 import './RecipeCard.css'
 import {faClock} from "@fortawesome/free-regular-svg-icons";
-import {faFireAlt, faBowlFood, faHeart} from "@fortawesome/free-solid-svg-icons";
+import {faBowlFood, faFireAlt, faHeart} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {useNavigate} from "react-router-dom";
 
 
 const RecipeCard = (props) => {
+    let navigate = useNavigate();
+    const goToRecipeFullPage = (id) => {
+        let path = id;
+        navigate(path);
+    }
+
     return (<div className="recipe">
-        <a href={"/recipes/" + props.id} className="recipe-link">
+        <div onClick={() => goToRecipeFullPage(props.id)} className="recipe-link">
             <div className="img-fav-icon-container">
                 {props.favourite ?
                     <FontAwesomeIcon
@@ -20,7 +27,7 @@ const RecipeCard = (props) => {
                 />
             </div>
             <h5 className="recipe-name">{props.name}</h5>
-        </a>
+        </div>
 
         <div className="tile recipe-prep-times">
             <FontAwesomeIcon

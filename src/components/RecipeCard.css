@@ -21,6 +21,7 @@
     align-items: center;
     text-decoration: none;
     grid-area: recipe-link;
+    cursor: pointer;
 }
 
 .recipe-img {
