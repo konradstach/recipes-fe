@@ -21,7 +21,6 @@
     align-items: center;
     text-decoration: none;
     grid-area: recipe-link;
-    cursor: pointer;
 }
 
 .recipe-img {
@@ -30,6 +29,8 @@
     width: auto;
     height: auto;
     margin-bottom: 0;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
 }
 
 .recipe-name {
@@ -90,7 +91,7 @@ p {
 
 @media screen and (max-width: 600px) {
     .recipe {
-        grid-template-rows: 3fr 1fr 1fr;
+        grid-template-rows: 2.5fr 1fr 1fr;
     }
     .recipe-name {
         margin-bottom: 0.5rem;

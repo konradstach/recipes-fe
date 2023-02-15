@@ -24,8 +24,11 @@ const RecipeFullPage = () => {
     const handleFavouriteClick = (event) => {
         event.preventDefault();
 
-        const editedRecipe = [...recipe];
-        // editedRecipe.
+        const favouriteValue = {favourite: !recipe.favourite};
+        axios.patch("http://localhost:8081/recipes/" + recipeId, favouriteValue)
+            .then(response => {
+                setRecipe(response.data)
+            })
     }
 
     console.log(recipe);
@@ -35,10 +38,10 @@ const RecipeFullPage = () => {
     } else {
         return (
             <motion.div
-                initial={{opacity:0}}
-                animate={{opacity:1}}
-                exit={{opacity:0}}
-                transition={{ duration: 0.5 }}
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                exit={{opacity: 0}}
+                transition={{duration: 0.5}}
             >
                 <RecipeHeader mealName={recipe.name} imgUrl={recipe.imgUrl} tags={recipe.tags}
                               favourite={recipe.favourite}
