@@ -33,3 +33,12 @@ input, textarea, p {
 textarea {
     min-height: 150px;
 }
+
+.web-scrap-form{
+    display: flex;
+    margin-bottom: 1em;;
+}
+
+.web-scrap-input{
+    width: 100%;
+}

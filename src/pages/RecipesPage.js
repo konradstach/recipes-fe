@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './RecipesPage.css'
-import RecipeCard from "../components/RecipeCard";
+import RecipeCard from "../components/recipe/RecipeCard";
 import SearchBar from "../components/ui/SearchBar";
 import axios from "axios";
 import {motion} from 'framer-motion';
