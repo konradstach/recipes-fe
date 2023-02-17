@@ -17,7 +17,7 @@ function App() {
                 <Routes location={location} key={location.pathname}>
                     <Route path='/shoppingList' element={<ShoppingListPage/>}/>
                     <Route exact path='/recipes' element={<RecipesPage/>}/>
-                    <Route path='/' element={<MainPage/>} exact/>
+                    <Route path='/' element={<RecipesPage/>} exact/>
                     <Route path='/recipes/:id' element={<RecipeFullPage/>} exact/>
                     <Route path='/new-recipe' element={<AddNewRecipePage/>} exact/>
                     <Route path='/scrapper' element={<Scrapper/>} exact/>

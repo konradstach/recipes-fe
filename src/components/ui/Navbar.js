@@ -8,9 +8,6 @@ function Navbar() {
                 <div className="nav-links">
                     <ul>
                         <li className="nav-link">
-                            <Link to='/'>Główna</Link>
-                        </li>
-                        <li className="nav-link">
                             <Link to='/recipes'>Przepisy</Link>
                         </li>
                         <li className="nav-link">

@@ -1,3 +1,7 @@
+body {
+    background: linear-gradient(to right, #F8B195, #C06C84);
+}
+
 .add-new-recipe-button {
     display: flex;
     justify-content: center;
@@ -6,7 +10,8 @@
     margin-left: auto;
     margin-bottom: 5px;
     padding: 0;
-    background: #009578;
+    /*background: #009578;*/
+    background: #6C5B7B;
     border: none;
     outline: none;
     border-radius: 3px;
@@ -15,11 +20,13 @@
 }
 
 .add-new-recipe-button:hover {
-    background: #008168;
+    /*background: #008168;*/
+    background: #564e69;
 }
 
 .add-new-recipe-button:active {
-    background: #006e58;
+    /*background: #006e58;*/
+    background: #474059;
 }
 
 .add-new-recipe-button-text, .add-new-recipe-button-icon {
@@ -43,6 +50,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    padding-top: 0.25em;
 }
 
 .recipes-container {

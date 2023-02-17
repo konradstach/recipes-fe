@@ -1,5 +1,6 @@
 .recipe {
-    background: linear-gradient(to right, #e2e0ff, #c6c5e0);
+    /*background: linear-gradient(to right, #e2e0ff, #c6c5e0);*/
+    background: #eee;
     margin: 0.5rem;
     display: grid;
     -webkit-box-shadow: 5px 3px 24px -10px rgba(66, 68, 90, 1);
@@ -84,14 +85,14 @@ p {
     bottom: 0;
     right: 0;
     padding: 0.5rem;
-    color: red;
+    color: #f64b5a;
     background: rgba(0, 0, 0, 0.6);
 }
 
 
 @media screen and (max-width: 600px) {
     .recipe {
-        grid-template-rows: 2.5fr 1fr 1fr;
+        grid-template-rows: 2.5fr 0.5fr 0.5fr;
     }
     .recipe-name {
         margin-bottom: 0.5rem;

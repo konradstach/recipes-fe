@@ -1,21 +1,41 @@
 .shopping-list-item {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 90%;
 }
 
 .remove-icon {
-    color: rgb(175, 134, 229);
+    color: #6C5B7B;
     height: 100%;
     margin: 0.25em;
-    background:rgba(0,0,0,0);
-
+    background: rgba(0, 0, 0, 0);
 }
 
 .item-name {
     margin: 0.25em;
 }
 
-.item-name-done{
+.item-name-done {
     margin: 0.25em;
-    text-decoration: line-through;
+    /*text-decoration: line-through;*/
+    color: #555;
+    opacity: 0.5;
+    animation: fadeOut 0.3s;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0.5
+    }
+}
+
+.line-break{
+    margin: 0.25rem 0;
+    width: 90%;
 }

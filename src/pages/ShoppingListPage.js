@@ -3,25 +3,22 @@ import ShoppingList from "../components/shopping/ShoppingList";
 import ShoppingItemInput from "../components/shopping/ShoppingItemInput";
 import "./ShoppingListPage.css"
 import {motion} from 'framer-motion';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faTrash} from "@fortawesome/free-solid-svg-icons";
 
 
 const ShoppingListPage = () => {
-    const [list, setList] = useState([
-        {
-            "name": "coś",
-            "done": true
-        },
-        {
-            "name": "coś innego",
-            "done": false
-        }]);
+    const [list, setList] = useState([{
+        "name": "coś", "done": false
+    }, {
+        "name": "coś innego", "done": true
+    }]);
     const [newItem, setNewItem] = useState({"name": "", "done": false});
 
     const handleAdd = () => {
         if (newItem.name !== "") {
             const newItemToBuy = {
-                "name": newItem.name,
-                "done": false
+                "name": newItem.name, "done": false
             }
             setList([newItemToBuy, ...list]);
             setNewItem({"name": "", "done": false});
@@ -35,13 +32,21 @@ const ShoppingListPage = () => {
         }
     }
 
-    const handleRemove = (event, index) => {
+    const toggleDone = (event, index) => {
         event.preventDefault();
         const updatedList = [...list];
         const done = updatedList.splice(index, 1).at(0);
-        done.done = true;
+        done.done = !done.done;
+        if (done.done) {
+            setList([...updatedList, done]);
+        } else {
+            setList([done, ...updatedList]);
+        }
+    }
 
-        setList([...updatedList, done]);
+    const deleteDone = () => {
+        const updatedList = [...list];
+        setList(updatedList.filter(e => !e.done));
     }
 
     return (<motion.div
@@ -52,13 +57,19 @@ const ShoppingListPage = () => {
         >
             <div className="shopping-list-container">
                 <div className="shopping-list-card">
-                    <ShoppingList list={list} handleRemove={handleRemove}></ShoppingList>
-                    <ShoppingItemInput handleAdd={handleAdd} handleEnterPress={handleEnterPress} newItem={newItem}
+                    <button className="fa-icon delete-done-icon" onClick={deleteDone}>Usuń kupione
+                        <FontAwesomeIcon
+                            icon={faTrash} className="fa-1x icon-padding"
+                        ></FontAwesomeIcon>
+                    </button>
+                    <ShoppingList list={list} handleRemove={toggleDone}></ShoppingList>
+                    <ShoppingItemInput handleAdd={handleAdd}
+                                       handleEnterPress={handleEnterPress}
+                                       newItem={newItem}
                                        setNewItem={setNewItem}></ShoppingItemInput>
                 </div>
             </div>
-        </motion.div>
-    );
+        </motion.div>);
 };
 
 export default ShoppingListPage;

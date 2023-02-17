@@ -36,7 +36,7 @@ const RecipeFullPage = () => {
     if (isLoading) {
         return <p>Loading...</p>
     } else {
-        return (
+        return (<div className="recipe-full-page-container">
             <motion.div
                 initial={{opacity: 0}}
                 animate={{opacity: 1}}
@@ -52,6 +52,7 @@ const RecipeFullPage = () => {
                     <NutritionTable/>
                 </section>
             </motion.div>
+            </div>
         );
     }
 };
