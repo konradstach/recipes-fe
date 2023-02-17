@@ -1,0 +1,27 @@
+html {
+    background: linear-gradient(to right, rgba(253, 194, 194), rgb(175, 134, 229));
+}
+
+.shopping-list-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    background: linear-gradient(to right, rgba(253, 194, 194), rgb(175, 134, 229));
+}
+
+.shopping-list-card {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    height: 90%;
+    border-radius: 10px;
+    width: 80%;
+    margin-top: 10px;
+}
+
+.fa-icon{
+    border: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}

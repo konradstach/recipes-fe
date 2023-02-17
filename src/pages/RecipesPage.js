@@ -25,14 +25,11 @@ const RecipesPage = () => {
     }, []);
 
     let navigate = useNavigate();
-    const goToNewRecipePage = () =>{
+    const goToNewRecipePage = () => {
         let path = '/new-recipe';
         navigate(path);
     }
 
-    if (isLoading) {
-        return <p>Loading...</p>
-    }
     return (<motion.div
         initial={{opacity: 0}}
         animate={{opacity: 1}}
@@ -51,18 +48,19 @@ const RecipesPage = () => {
 
             <SearchBar recipes={recipes} setSearchResults={setSearchResults}></SearchBar>
         </div>
-        <div className="recipes-list">
-            {searchResults.map(r => {
-                return <RecipeCard name={r.name}
-                                   id={r.id}
-                                   key={r.id}
-                                   prepTime={r.prepTime}
-                                   withCookTime={r.withCookTime}
-                                   imgUrl={r.imgUrl}
-                                   energy={r.energy}
-                                   favourite={r.favourite}/>
-            })}
-        </div>
+        {isLoading ? <p>Loading...</p> :
+            <div className="recipes-list">
+                {searchResults.map(r => {
+                    return <RecipeCard name={r.name}
+                                       id={r.id}
+                                       key={r.id}
+                                       prepTime={r.prepTime}
+                                       withCookTime={r.withCookTime}
+                                       imgUrl={r.imgUrl}
+                                       energy={r.energy}
+                                       favourite={r.favourite}/>
+                })}
+            </div>}
     </motion.div>);
 };
 

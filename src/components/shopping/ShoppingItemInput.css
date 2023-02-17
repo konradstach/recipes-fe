@@ -1,0 +1,18 @@
+.add-new-product-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.add-new-product-icon {
+    color: white;
+    background: rgba(255, 189, 116, 0.68);
+    height: 35px;
+    width: 35px;
+    border-radius: 25px;
+    margin: 0.25em;
+}
+
+.add-new-product-input {
+    border: none;
+}

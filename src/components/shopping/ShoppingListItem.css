@@ -1,0 +1,21 @@
+.shopping-list-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.remove-icon {
+    color: rgb(175, 134, 229);
+    height: 100%;
+    margin: 0.25em;
+    background:rgba(0,0,0,0);
+
+}
+
+.item-name {
+    margin: 0.25em;
+}
+
+.item-name-done{
+    margin: 0.25em;
+    text-decoration: line-through;
+}
