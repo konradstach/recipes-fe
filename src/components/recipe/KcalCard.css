@@ -1,0 +1,37 @@
+.kcal-card-container {
+    border: solid 2px;
+    border-radius: 10px;
+    width: 24%;
+}
+
+.kcal-card-name {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.kcal-card-value {
+    position: relative;
+    text-align: center;
+    /*background-color: #6C5B7B;*/
+    /*background-color: #335c7d;*/
+    /*background-color: #c06c84;*/
+    padding-bottom: 0.75em;
+    z-index: -10;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.kcal-card-value-text {
+    color: white;
+    margin: 0;
+    padding-top: 0.25em;
+}
+
+.kcal-card-energy-color {
+    background-color: #6C5B7B;
+}
+
+.kcal-card-macros-color {
+    background-color: #c06c84;
+}

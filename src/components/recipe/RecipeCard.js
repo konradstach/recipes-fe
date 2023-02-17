@@ -33,7 +33,7 @@ const RecipeCard = (props) => {
             <FontAwesomeIcon
                 icon={faClock} className="fa-2x icon">
             </FontAwesomeIcon>
-            <p>{props.prepTime} | {props.withCookTime}</p>
+            <p>{props.prepTime}min | {props.withCookTime}min</p>
         </div>
 
         <div className="tile recipe-kcal">
@@ -41,13 +41,6 @@ const RecipeCard = (props) => {
                 icon={faFireAlt} className="fa-2x icon">
             </FontAwesomeIcon>
             <p>{props.energy} kcal</p>
-        </div>
-
-        <div className="tile recipe-nutri">
-            <FontAwesomeIcon
-                icon={faBowlFood} className="fa-2x icon">
-            </FontAwesomeIcon>
-            <p>B: 25g | W: 46g | T: 19g</p>
         </div>
     </div>);
 };

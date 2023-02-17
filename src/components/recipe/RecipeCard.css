@@ -9,7 +9,7 @@
     border: solid rgba(26, 26, 26, 0.45);
     border-radius: 0.35rem;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 5fr 1fr 1fr;
+    grid-template-rows: 5fr 1fr;
     grid-template-areas:
 "recipe-link recipe-link"
 "recipe-prep-times recipe-kcal"
@@ -46,6 +46,7 @@
 
 .recipe-prep-times {
     grid-area: recipe-prep-times;
+    margin-top: 0.25em;
 }
 
 p {
@@ -58,7 +59,7 @@ p {
 
 .recipe-kcal {
     grid-area: recipe-kcal;
-    /*background-color: #ffaabe;*/
+    margin-top: 0.25em;
 }
 
 .recipe-nutri {
@@ -92,7 +93,7 @@ p {
 
 @media screen and (max-width: 600px) {
     .recipe {
-        grid-template-rows: 2.5fr 0.5fr 0.5fr;
+        grid-template-rows: 2.5fr 0.5fr;
     }
     .recipe-name {
         margin-bottom: 0.5rem;
@@ -111,12 +112,12 @@ p {
 
 @media screen and (min-width: 600px) {
     .recipe {
-        grid-template-rows: 3fr 1fr 1fr;
+        grid-template-rows: 3fr 1fr;
     }
 }
 
 @media screen and (min-width: 1200px) {
     .recipe {
-        grid-template-rows: 5fr 1fr 1fr;
+        grid-template-rows: 5fr 1fr;
     }
 }
