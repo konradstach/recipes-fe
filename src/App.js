@@ -7,7 +7,7 @@ import ShoppingListPage from "./pages/ShoppingListPage";
 import RecipeFullPage from "./pages/RecipeFullPage";
 import {AnimatePresence} from 'framer-motion';
 import AddNewRecipePage from "./pages/AddNewRecipePage";
-import Scrapper from "./components/Scrapper";
+// import Scrapper from "./components/Scrapper";
 
 function App() {
     const location = useLocation();
@@ -20,7 +20,7 @@ function App() {
                     <Route path='/' element={<RecipesPage/>} exact/>
                     <Route path='/recipes/:id' element={<RecipeFullPage/>} exact/>
                     <Route path='/new-recipe' element={<AddNewRecipePage/>} exact/>
-                    <Route path='/scrapper' element={<Scrapper/>} exact/>
+                    {/*<Route path='/scrapper' element={<Scrapper/>} exact/>*/}
                 </Routes>
             </AnimatePresence>
         </Layout>

@@ -4,7 +4,8 @@ import "./ShoppingList.css"
 
 const ShoppingList = (props) => {
     return (<>
-        {props.list.length > 0 && <ul className="shopping-list">
+        {props.list.length > 0 &&
+            <ul className="shopping-list">
             {props.list.map((currentValue, index) => {
                 return <ShoppingListItem item={currentValue}
                                          index={index}

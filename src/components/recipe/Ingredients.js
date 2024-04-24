@@ -1,5 +1,6 @@
 import React from 'react';
 import './Ingredients.css'
+import AddToShoppingListModal from "./AddToShoppingListModal";
 
 const Ingredients = (props) => {
     return (
@@ -10,6 +11,7 @@ const Ingredients = (props) => {
                     {props.ingredients.map((currentValue, index) =>{
                         return <p className="single-ingredient" key={index}>{currentValue.amount} {currentValue.ingredientName}</p>
                     })}
+                    <button onClick={props.handleAddToShoppingList}>Dodaj do listy składników</button>
                 </div>
             </article>
         </div>
