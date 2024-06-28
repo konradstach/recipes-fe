@@ -13,7 +13,7 @@ const ShoppingItemInput = (props) => {
                 placeholder="Dodaj nowy produkt"
                 value={props.newItem.name}
                 onChange={e => {
-                    props.setNewItem({"name": e.target.value, "done": false})
+                    props.setNewItem({"name": e.target.value, "checked": false})
                 }}
                 onKeyDown={props.handleEnterPress}
             />

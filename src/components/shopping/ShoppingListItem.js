@@ -6,16 +6,11 @@ const ShoppingListItem = (props) => {
     return (
         <>
             <div className="shopping-list-item">
-                {/*<button className="fa-icon remove-icon" onClick={event => props.handleRemoveClick(event, props.index)}>*/}
-                {/*    <FontAwesomeIcon*/}
-                {/*        icon={props.item.done ? faSquareCheck : faSquare} className="fa-1x"*/}
-                {/*    ></FontAwesomeIcon>*/}
-                {/*</button>*/}
-                {props.item.done ?
+                {props.item.checked ?
                     <p className="item-name-done">{props.item.name}</p>
                     : <p className="item-name">{props.item.name}</p>}
                 <CheckBox
-                    checked={props.item.done}
+                    checked={props.item.checked}
                     checkBoxStyle={{
                         checkedColor: "#6C5B7B",
                         size: 15,

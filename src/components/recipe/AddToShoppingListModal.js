@@ -7,25 +7,25 @@ function AddToShoppingListModal(props) {
     const [ingredientsToBuy, setIngredientsToBuy] = useState(props.ingredients.map(ingredient => {
         return {
             name: ingredient.amount === null ? ingredient.ingredientName : ingredient.amount + ' ' + ingredient.ingredientName,
-            done: false
+            checked: false
         };
     }));
 
     const toggleCheck = (event, index) => {
         event.preventDefault();
         const updatedList = [...ingredientsToBuy];
-        const done = updatedList.splice(index, 1).at(0);
-        done.done = !done.done;
-        if (done.done) {
-            setIngredientsToBuy([...updatedList, done]);
+        const checked = updatedList.splice(index, 1).at(0);
+        checked.checked = !checked.checked;
+        if (checked.checked) {
+            setIngredientsToBuy([...updatedList, checked]);
         } else {
-            setIngredientsToBuy([done, ...updatedList]);
+            setIngredientsToBuy([checked, ...updatedList]);
         }
     }
 
-    const handleAddCheckedToShoppingList = () => {
+    const handleAddCheckedToShoppingList = (event) => {
         const productsToAdd = ingredientsToBuy
-            .filter(e=> !e.done)
+            .filter(e=> !e.checked)
             .map(e => {
             return {
                 name: e.name,
@@ -36,34 +36,18 @@ function AddToShoppingListModal(props) {
         axios.post(`http://localhost:8081/shopping-list`, productsToAdd)
             .then(res => {
                 console.log(res);
+                props.closeModal(event);
             })
     }
 
     return (
         <>
             {props.visible && (
-                <div className="overlay">
+                <div className="overlay" onClick={props.closeModal}>
                     <div className="add-to-shopping-list-modal-content">
+                        <h5>Odznacz produkty, których nie potrzebujesz</h5>
                         <ShoppingList list={ingredientsToBuy} handleRemove={toggleCheck}></ShoppingList>
-                        {/*<ul className="shopping-list">*/}
-                        {/*    {ingredientsToBuy.map((currentValue, index) => {*/}
-                        {/*        return <li key={index}>*/}
-                        {/*            <p>{currentValue.productToBuy}</p>*/}
-                        {/*            <CheckBox*/}
-                        {/*                checked={currentValue.toBuy}*/}
-                        {/*                checkBoxStyle={{*/}
-                        {/*                    checkedColor: "#6C5B7B",*/}
-                        {/*                    size: 15,*/}
-                        {/*                    unCheckedColor: "#6C5B7B"*/}
-                        {/*                }}*/}
-                        {/*                duration={300}*/}
-                        {/*                onClick={event => toggleCheck(event, index)}*/}
-                        {/*            />*/}
-                        {/*        </li>*/}
-                        {/*    })}*/}
-                        {/*</ul>*/}
                         <button onClick={handleAddCheckedToShoppingList}>Dodaj zaznaczone do listy</button>
-                        <button onClick={props.closeModal}>CLOSE</button>
                     </div>
                 </div>
             )}
